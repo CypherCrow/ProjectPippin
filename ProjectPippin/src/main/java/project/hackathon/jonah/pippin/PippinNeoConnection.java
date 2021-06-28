@@ -3,10 +3,12 @@ package project.hackathon.jonah.pippin;
 //import io.neow3j.types.Hash256;
 //import io.neow3j.types.NeoVMStateType;
 import java.util.List;
+import java.util.Map;
 
 //import io.neow3j.contract.NeoToken;
 
-//import java.math.BigInteger;
+import io.neow3j.types.Hash160;
+import java.math.BigInteger;
 
 import io.neow3j.protocol.Neow3j;
 import io.neow3j.protocol.Neow3jConfig;
@@ -108,6 +110,17 @@ public class PippinNeoConnection {
 
         for(int i = 0; i < walletAccounts.size(); i++){
             System.out.println(walletAccounts.get(i)); 
+        }
+
+        Account theoden = Account.create();
+        System.out.println(theoden);
+        Map<Hash160, BigInteger> theodenBalances = theoden.getNep17Balances(neow3j); 
+
+        System.out.println(theodenBalances); 
+
+        for(Hash160 key : theodenBalances.keySet()){
+            System.out.println(key); 
+            System.out.println("{ " + key + " : " + theodenBalances.get(key) +" }"); 
         }
     }
 
