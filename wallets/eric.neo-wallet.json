@@ -1,0 +1,29 @@
+{
+  "name": "eric",
+  "version": "1.0",
+  "scrypt": {
+    "n": 16384,
+    "r": 8,
+    "p": 8,
+    "size": 64
+  },
+  "accounts": [
+    {
+      "address": "Nck71hdR19bZyv224SGk5DYvurQpqwqwbK",
+      "label": "Default account",
+      "isDefault": true,
+      "lock": false,
+      "key": "6PYVRvgrAcPWsZReGPtu6X2TsY5p7mRM2wo8CWXHHuU7nCUNdN6NFdMohK",
+      "contract": {
+        "script": "DCECb9PjL34/Hqrm4UHBey5AbxyO9yRfLmYLlrltUHWQXbpBVuezJw==",
+        "parameters": [
+          {
+            "name": "signature",
+            "type": "Signature"
+          }
+        ],
+        "deployed": false
+      }
+    }
+  ]
+}
