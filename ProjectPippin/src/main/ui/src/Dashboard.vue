@@ -1,6 +1,8 @@
 <template>
     <div class="pippinDashboard">
-        <Header />  
+        <Header /> 
+
+        <router-view></router-view> 
     </div> 
 </template> 
 
