@@ -38,19 +38,17 @@ export default {
     },
     methods: {
         formSubmit(e) {
-            e.preventDefault(); 
-            
-            let currentObj = this; 
+            e.preventDefault();  
 
             this.axios.post('http://localhost:8000/simpleForm', {
                 firstname: this.firstname,
                 lastname: this.lastname
             })
             .then((response) => {
-                currentObj.output = response.data;
+                this.output = response.data;
             })
             .catch((error) => {
-                currentObj.output = error; 
+                this.output = error; 
             });
         }
     }

@@ -1,6 +1,6 @@
 <template>
     <div class="pippinDashboard">
-        <Header /> 
+        <Header title="Pippin"/> 
 
         <router-view></router-view> 
     </div> 
@@ -18,4 +18,8 @@ export default {
 </script> 
 
 <style> 
+.pippinDashboard {
+    font-family: Arial, Helvetica, sans-serif; 
+    display: flex; 
+}
 </style> 
