@@ -1,31 +1,24 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center"> 
-            <div class="col-md-8"> 
-                <div class="card"> 
-                    <div class="class-header">Pippin Simple Form</div> 
+    <div class="pippinSimpleForm">
+        <form>
+            <label>First Name:</label>
+            <input v-model="message" name="firstname" />
 
-                    <div class="card-body">
-                        <form @submit="formSubmit"> 
-                            <strong>First Name:</strong>
-                            <input type="text" class="form-control" v-model="firstname">
-                            <strong>Last Name:</strong> 
-                            <input type="text" class="form-control" v-model="lastname">
+            <label>Last Name:</label>
+            <input v-model="message" name="lastname" />
 
-                            <button class="btn btn-success">Submit</button> 
-                        </form> 
+            <button v-on:click="formSubmit">Submit</button> 
+        </form> 
 
-                        <strong>Output:</strong> 
-                        <pre>{{output}}</pre> 
-                    </div> 
-                </div> 
-            </div> 
+        <div class="Name Display"> 
+            <p>{{ output }}</p>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    name: 'SimpleForm',
     mounted() {
         console.log('Component mounted.')
     },
