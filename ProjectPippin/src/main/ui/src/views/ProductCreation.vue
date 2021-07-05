@@ -13,7 +13,7 @@
                 <input v-model="productPrice" name="productPrice"/>
             </div> 
 
-            <div class="productDescription"> <!-- Have input listeners on here --->
+            <div class="productDescription"> <!-- Have input listeners on here -->
                 <label>Description: </label><br/>
                 <textarea v-model="productDescription" name="productDescription"/>
 
