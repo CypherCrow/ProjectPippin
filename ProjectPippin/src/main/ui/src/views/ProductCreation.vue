@@ -54,7 +54,7 @@ export default {
         formSubmit(e){
             e.preventDefault();
 
-            
+            //Create new ProductCard here
         },
 
         descriptCharsCheck(){
