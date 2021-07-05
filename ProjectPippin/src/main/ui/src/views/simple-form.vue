@@ -2,10 +2,10 @@
     <div class="pippinSimpleForm">
         <form>
             <label>First Name:</label>
-            <input v-model="message" name="firstname" />
+            <input v-model="firstname" name="firstname" />
 
             <label>Last Name:</label>
-            <input v-model="message" name="lastname" />
+            <input v-model="lastname" name="lastname" />
 
             <button v-on:click="formSubmit">Submit</button> 
         </form> 
@@ -33,16 +33,7 @@ export default {
         formSubmit(e) {
             e.preventDefault();  
 
-            this.axios.post('http://localhost:8000/simpleForm', {
-                firstname: this.firstname,
-                lastname: this.lastname
-            })
-            .then((response) => {
-                this.output = response.data;
-            })
-            .catch((error) => {
-                this.output = error; 
-            });
+            this.output = this.firstname + ' ' + this.lastname; 
         }
     }
 }

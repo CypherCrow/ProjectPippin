@@ -3,23 +3,18 @@
         <header>
             <h1>{{ title }}</h1>
         </header>
-
-        <LinksList /> 
     </div>
 </template>
 
 <script>
-import LinksList from './LinksList.vue'
+//import LinksList from './LinksList.vue'
 
 export default {
     name: 'Header', 
-    components: {
-        LinksList,
-    },
     props: {
         title: {
             type: String, 
-            default: 'What about second breakfast?'
+            default: 'Pippin'
         },
     }
 }
@@ -28,12 +23,13 @@ export default {
 
 <style scoped>
 
-header {
+.pippinHeader {
     display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    text-align: center; 
+    justify-content: column; 
     margin-bottom: 20px; 
+    background-color: seagreen;
+    color: white; 
+    padding-left: 15px; 
 }
 
 </style> 
