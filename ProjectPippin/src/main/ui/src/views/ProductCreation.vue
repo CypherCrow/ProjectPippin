@@ -5,17 +5,21 @@
         <form> 
             <div class="productName">
                 <label>Name: </label>
-                <input v-model="productName" name="productName"/>
+                <input v-model="productName" name="productName" @keyup:enter="titleCharsCheck" />
+
+                <div class="titleCharacterCount"> 
+                    <p>{{ titleCharacterCount }} / {{ TITLE_CHARS_MAX_COUNT }}</p>
+                </div>
             </div>
 
             <div class="productPrice">
                 <label>Price: </label>
-                <input v-model="productPrice" name="productPrice"/>
+                <input v-model="productPrice" name="productPrice" />
             </div> 
 
             <div class="productDescription"> <!-- Have input listeners on here -->
                 <label>Description: </label><br/>
-                <textarea v-model="productDescription" name="productDescription"/>
+                <textarea v-model="productDescription" name="productDescription" @keyup:enter="descriptionCharsCheck" />
 
                 <div class="descriptionCharacterCount">
                     <p>{{ descriptionCharacterCount }} / {{ DESCRIPTION_CHARS_MAX_COUNT }}</p>
@@ -24,12 +28,17 @@
             
             <div class="createProduct">
                 <button v-on:click="formSubmit">Create Product</button>
+                <br/>
+                <p>{{ output }}</p>
             </div> 
         </form> 
     </div>
 </template> 
 
 <script>
+
+import axios from 'axios'
+import router from '@/router/index'
 
 import Header from '@/components/Header.vue'
 
@@ -45,9 +54,11 @@ export default {
             productName: '',
             productDescription: '',
             productPrice: 0.00,
+            titleCharacterCount: 0,
             descriptionCharacterCount: 0,
             DESCRIPTION_CHARS_MAX_COUNT,
-            TITLE_CHARS_MAX_COUNT
+            TITLE_CHARS_MAX_COUNT,
+            output: ''
         };
     }, 
     methods: {
@@ -55,17 +66,48 @@ export default {
             e.preventDefault();
 
             //Create new ProductCard here
+            axios.post('/store', {
+                name: this.productName,
+                price: this.productPrice,
+                description: this.productDescription
+            })
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+
+            let count = 3            
+
+            setInterval(() => {
+                this.output = `Submitted! Will be redirected to store page in ${count}...`
+
+                if(count == 0){
+                    router.push({ path: '/store'})
+                }
+
+                count--
+
+            }, 1000)
+            
         },
 
-        descriptCharsCheck(){
-            if(this.product.description.length >= DESCRIPTION_CHARS_MAX_COUNT){
+        descriptionCharsCheck(){
+            if(this.descriptionCharacterCount > DESCRIPTION_CHARS_MAX_COUNT){
                 console.log(`Max character limit of ${DESCRIPTION_CHARS_MAX_COUNT} for description reached.`);
+            }
+            else{
+                this.descriptionCharacterCount++ 
             }      
         },
 
         titleCharsCheck(){
-            if(this.product.title.length >= TITLE_CHARS_MAX_COUNT){
+            if(this.titleCharacterCount > TITLE_CHARS_MAX_COUNT){
                 console.log(`Max character limit of ${TITLE_CHARS_MAX_COUNT} for title reached.`)
+            }
+            else{
+                this.titleCharacterCount++ 
             }
         }
     }
@@ -90,6 +132,10 @@ form div input {
 .productDescription textarea {
     min-width: 500px;
     min-height: 230px; 
+}
+
+.titleCharacterCount {
+    padding-left: 400px; 
 }
 
 .descriptionCharacterCount {

@@ -1,10 +1,12 @@
 <template> 
-    <div class="ProductCard">
-        <p id="image"><img alt="spongebob3rdCover" width="300px" height="300px" v-bind:src="image" /></p>
-        <p id="name">{{ name }}</p>
-        <p id="price">$ {{ price }}</p>
-        <p id="description">{{ description }}</p>
-    </div>
+    <router-link to="/store/product">
+        <div class="ProductCard">
+            <p id="image"><img alt="spongebob3rdCover" width="300px" height="300px" v-bind:src="image" /></p>
+            <p id="name">{{ name }}</p>
+            <p id="price">$ {{ price }}</p>
+            <p id="description">{{ description }}</p>
+        </div>
+    </router-link>
 </template> 
 
 <script> 
