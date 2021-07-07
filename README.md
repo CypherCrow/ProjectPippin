@@ -12,6 +12,10 @@ To run the backend, run this command:
 
 `.\gradlew run`
 
+For deploying a contract, this command should be implemented automatically: 
+
+`.\gradlew neow3jCompile`
+
 ### Frontend
 
 To run the front-end, run this command: 
