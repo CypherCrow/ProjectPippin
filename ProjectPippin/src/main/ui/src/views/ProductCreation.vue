@@ -42,7 +42,7 @@ import router from '@/router/index'
 
 import Header from '@/components/Header.vue'
 
-const DESCRIPTION_CHARS_MAX_COUNT = 125, TITLE_CHARS_MAX_COUNT = 50;
+const DESCRIPTION_CHARS_MAX_COUNT = 125, TITLE_CHARS_MAX_COUNT = 75;
 
 export default {
     name: 'ProductCreation',

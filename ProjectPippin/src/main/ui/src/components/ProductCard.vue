@@ -1,7 +1,7 @@
 <template> 
-    <router-link to="/store/product">
+    <router-link to="/product/0001">
         <div class="ProductCard">
-            <p id="image"><img alt="spongebob3rdCover" width="300px" height="300px" v-bind:src="image" /></p>
+            <p id="image"><img alt="Default image provided" width="300px" height="300px" v-bind:src="image" /></p>
             <p id="name">{{ name }}</p>
             <p id="price">$ {{ price }}</p>
             <p id="description">{{ description }}</p>
@@ -21,7 +21,7 @@ export default {
     },
     data() {
         return {
-            image: "@/assets/Spongebob-Complete3rdSeason-Cover.jpg",
+            image: "@/assets/default_image.png",
         };
     }
 }
@@ -60,6 +60,11 @@ export default {
     text-align: center;
     padding: 3px 0px;
     margin-top: 60px;
+}
+
+/*  <router-link> is converted to <a> */
+a {
+    text-decoration: none; 
 }
 
 </style> 

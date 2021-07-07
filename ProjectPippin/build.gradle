@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'io.neow3j.gradle-plugin' version "3.11.2"
-    id "org.springframework.boot" version "2.5.2"
+    //id "org.springframework.boot" version "2.5.2"
 }
 
 group 'project.hackathon.jonah.pippin'
@@ -23,7 +23,7 @@ dependencies {
 }
 
 neow3jCompiler {
-    className = "project.hackathon.jonah.pippin.PippinOrderContract"
+    className = "project.hackathon.jonah.pippin.contracts.PippinWarehouseContract"
     debug = true
 }
 

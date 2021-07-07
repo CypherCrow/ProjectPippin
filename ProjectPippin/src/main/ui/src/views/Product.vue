@@ -1,9 +1,14 @@
 <template> 
-    <div class="product">
+    <div class="Product">
         <Header title='{{ title }}' />
 
-        <div class="productDescriptionFull">
+        <div class="ProductDescriptionFull">
             <p>Blah blah blah blah blah</p>
+        </div> 
+
+        <div class="ProductOptions">
+            <button>Add to Cart</button>
+            <button>Rate Product</button>
         </div> 
     </div> 
 </template> 
@@ -25,3 +30,11 @@ export default {
 }
 
 </script>
+
+<style scoped> 
+
+.productOptions button {
+    margin: 5px; 
+}
+
+</style> 

@@ -1,4 +1,4 @@
-package project.hackathon.jonah.pippin;
+package project.hackathon.jonah.pippin.contracts;
 
 import io.neow3j.devpack.annotations.ManifestExtra;
 
