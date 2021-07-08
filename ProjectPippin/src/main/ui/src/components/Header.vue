@@ -32,11 +32,27 @@ export default {
 
 .pippinHeader {
     display: flex; 
-    justify-content: column; 
+    flex-direction: row; 
     margin-bottom: 20px; 
     background-color: seagreen;
     color: white; 
     padding-left: 15px; 
 }
+
+header {
+    padding: 5px; 
+}
+
+a {
+    text-decoration: none; 
+    color: white;
+    margin: 0px 10px; 
+    padding: 10px; 
+}
+
+a:hover {
+    background-color: maroon; 
+}
+
 
 </style> 
