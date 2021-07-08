@@ -1,5 +1,11 @@
 package project.hackathon.jonah.pippin; 
 
+/*
+ * 
+ * To test the connection to the Neo N3 blockchain 
+ * 
+ */
+
 //import io.neow3j.types.Hash256;
 //import io.neow3j.types.NeoVMStateType;
 import java.util.List;
