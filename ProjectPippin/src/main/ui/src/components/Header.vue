@@ -3,6 +3,13 @@
         <header>
             <h1>{{ title }}</h1>
         </header>
+
+        <nav>
+            <router-link to="/">Home</router-link>
+            <router-link to="/about">About</router-link>
+            <router-link to="/store">Store</router-link>
+        </nav>
+
     </div>
 </template>
 

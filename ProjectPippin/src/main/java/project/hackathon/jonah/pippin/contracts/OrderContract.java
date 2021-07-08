@@ -10,11 +10,16 @@ import java.util.Date;
 //import java.text.ParseException;
 import java.text.SimpleDateFormat;
   
+/*
+    This contract will be used as a reminder for delivery and to be fulfilled once the package is delivered to the cosignee;
+    Once the cosignee signs the ShortHaulCarrierToCosignee Contract, this contract will be signed automatically to complete 
+    the delivery process
+*/
 
-@ManifestExtra(key = "name", value = "PackageOrderContract")
+@ManifestExtra(key = "name", value = "OrderContract")
 @ManifestExtra(key = "author", value = "Pippin Project")
-@DisplayName("PackageOrderContract")
-public class PippinOrderContract {
+@DisplayName("OrderContract")
+public class OrderContract {
 
     //US date mode to be incorporated soon
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");

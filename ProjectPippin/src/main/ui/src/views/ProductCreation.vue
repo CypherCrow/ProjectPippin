@@ -1,9 +1,11 @@
 <template> 
     <div class="ProductCreation">
-        <Header title="New Product Creation" />
-
+        <Header title="New Product" />
+        <!-- Must need image upload ---> 
+        <!-- Products can be promoted or demoted; two types of votes: up and down; first 100 buyers is the minimum for product to be considered
+            for promotion; those that voted down will have their GAS refunded -->
         <form> 
-            <div class="productName">
+            <div class="productName"> <!-- Have input listeners on here -->
                 <label>Name: </label>
                 <input v-model="productName" name="productName" @keyup:enter="titleCharsCheck" />
 
