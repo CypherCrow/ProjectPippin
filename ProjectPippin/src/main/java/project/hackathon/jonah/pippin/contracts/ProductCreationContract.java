@@ -13,6 +13,8 @@ import io.neow3j.devpack.StorageContext;
 @ManifestExtra(key = "author", value="Pippin Project")
 public class ProductCreationContract {
 
+    static final byte[] OWNER_KEY = new byte[]{0x0d}; 
+
     static StorageContext ctx = Storage.getStorageContext();
     static final StorageMap contractMap = ctx.createMap((byte) 1);
     static final StorageMap titleMap = ctx.createMap((byte) 2); 
