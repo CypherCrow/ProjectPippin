@@ -15,7 +15,10 @@ public class ManufacturerToSupplierContract {
     
     static final byte[] OWNER_KEY = new byte[]{0x0d}; 
 
+    //StorageContext = gateway to a contract's storage
+    //can be passed to other contracts for the latter to perform read/write ops on current contract's persistent storage 
     static StorageContext ctx = Storage.getStorageContext();
+    //metadata on contract;
     static final StorageMap contractMap = ctx.createMap((byte) 1); 
     static final StorageMap certificateOriginMap = ctx.createMap((byte) 2);
     static final StorageMap batchNumberMap = ctx.createMap((byte) 3); 
