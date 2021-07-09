@@ -11,7 +11,7 @@ import io.neow3j.devpack.StorageContext;
 
 @ManifestExtra(key = "name", value="ProductCreationContract")
 @ManifestExtra(key = "author", value="Pippin Project")
-public class ProductCreationContract {
+public class ProductContract {
 
     static final byte[] OWNER_KEY = new byte[]{0x0d}; 
 
@@ -50,7 +50,25 @@ public class ProductCreationContract {
         if(productId == null || title ==  null || description == null || imageHash == null){
             return false; 
         }
+        if(descriptionMap.get(productId) != null){
+            return false; 
+        }
 
+        descriptionMap.put(productId, description);
+        titleMap.put(productId, title);
+        imgHashMap.put(productId, imageHash); 
+        return true;
+    }
+
+    public static boolean deleteProduct(String productId){
+
+        if(Runtime.getCallingScriptHash() != getOwner()){
+            return false; 
+        }
+
+        descriptionMap.delete(productId);
+        titleMap.delete(productId);
+        imgHashMap.delete(productId);
         return true;
     }
 

@@ -1,4 +1,7 @@
 <template> 
+
+    <!-- NO DUPLICATES ALLOWED --->
+
     <div class="ProductCreation">
         <Header title="New Product" />
         <!-- Must need image upload ---> 
