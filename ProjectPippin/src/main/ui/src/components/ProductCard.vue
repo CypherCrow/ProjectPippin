@@ -33,8 +33,8 @@ export default {
 .ProductCard {
     background: #f4f4f4;
     margin: 5px; 
-    width: 500px;
-    height: 500px; 
+    max-width: 500px;
+    max-height: 1000px; 
     padding: 10px 20px;
     cursor: pointer; 
     font-size: 14px;
@@ -45,6 +45,7 @@ export default {
 .ProductCard #name {
     display: flex;
     float: left; 
+    word-wrap: break-word; 
 }
 
 .ProductCard #price {
