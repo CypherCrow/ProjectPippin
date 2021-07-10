@@ -2,7 +2,7 @@
     <div class="pippinHome">
         <Header title='Pippin' />     
 
-        <div class="pippinDashboardText">
+        <div class="pippinDashboardSection">
             <h1>WELCOME!</h1> 
             <p>
                 Pippin: an e-commerce site on the Neo N3 blockchain.
@@ -25,5 +25,13 @@ export default {
 </script>
 
 <style scoped> 
+
+.pippinDashboardSection {
+    text-align: center; 
+}
+
+.pippinDashboardSection h1 {
+    font-size: 3.0em; 
+}
 
 </style>

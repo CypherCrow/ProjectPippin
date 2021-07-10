@@ -5,7 +5,7 @@ import io.neow3j.devpack.Hash160;
 import io.neow3j.devpack.annotations.ManifestExtra;
 import io.neow3j.devpack.annotations.OnDeployment;
 import io.neow3j.devpack.annotations.Safe;
-import io.neow3j.protocol.core.response.ContractManifest;
+//import io.neow3j.protocol.core.response.ContractManifest;
 import io.neow3j.devpack.Storage;
 import io.neow3j.devpack.StorageMap;
 import io.neow3j.devpack.StorageContext;

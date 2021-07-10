@@ -32,7 +32,7 @@
             </div>
             
             <div class="createProduct">
-                <button v-on:click="formSubmit">Create Product</button>
+                <Button buttonName="Create Product" color="green" />
                 <br/>
                 <p>{{ output }}</p>
             </div> 
@@ -47,6 +47,7 @@ import router from '@/router/index'
 //import { api } from '@cityofzion/neon-js'
 
 import Header from '@/components/Header.vue'
+import Button from '@/components/Button'
 import Store from '@/views/Store'
 
 const DESCRIPTION_CHARS_MAX_COUNT = 125, TITLE_CHARS_MAX_COUNT = 75;
@@ -54,7 +55,7 @@ const DESCRIPTION_CHARS_MAX_COUNT = 125, TITLE_CHARS_MAX_COUNT = 75;
 export default {
     name: 'ProductCreation',
     components: {
-        Header
+        Header, Button
     },
     data() {
         return {
