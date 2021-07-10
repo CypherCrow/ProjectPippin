@@ -1,10 +1,10 @@
 <template>
-    <div class="pippinStorePage">
+    <div class="PippinStorePage">
         <Header title="Store" />
         <router-link to="/store/newProduct">New Product</router-link>
 
-        <div class="pippinStoreProducts" v-for="product in products" :key="product.id">
-            <ProductCard name=product.name price=product.price description=product.description /> 
+        <div class="PippinStoreProductsSection" v-for="product in products" :key="product">
+            <ProductCard name="{{product.name}}" price="{{product.price}}" description="{{product.description}}" /> 
         </div> 
         <!-- <SimpleForm /> -->
     </div>
@@ -47,3 +47,11 @@ export default {
 } 
 
 </script> 
+
+<style scoped> 
+
+.PippinStoreProductsSection {
+    flex-direction: row-reverse; 
+}
+
+</style> 

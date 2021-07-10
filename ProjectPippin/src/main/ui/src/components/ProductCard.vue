@@ -3,7 +3,7 @@
         <div class="ProductCard">
             <p id="image"><img alt="Default image provided" width="300px" height="300px" v-bind:src="image" /></p>
             <p id="name">{{ name }}</p>
-            <p id="price">$ {{ price }}</p>
+            <p id="price">${{ price }}</p>
             <p id="description">{{ description }}</p>
         </div>
     </router-link>
@@ -15,7 +15,7 @@ export default {
     name: 'ProductCard',
     props: {
         name: String,
-        price: Number,
+        price: String,
         description: String,
         //image: Object
     },
@@ -39,6 +39,7 @@ export default {
     cursor: pointer; 
     font-size: 14px;
     align-items: center;
+    border-radius: 15px; 
 }
 
 .ProductCard #name {
