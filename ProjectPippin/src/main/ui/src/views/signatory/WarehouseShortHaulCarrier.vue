@@ -1,4 +1,5 @@
 <template> 
+<!-- Remember, one <div> for one view -->
     <Header title="Warehouse-Short-Haul Carrier Agreement" /> 
 </template> 
 
