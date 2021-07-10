@@ -44,9 +44,10 @@
 
 import axios from 'axios'
 import router from '@/router/index'
-import { api } from '@cityofzion/neon-js'
+//import { api } from '@cityofzion/neon-js'
 
 import Header from '@/components/Header.vue'
+import Store from '@/views/Store'
 
 const DESCRIPTION_CHARS_MAX_COUNT = 125, TITLE_CHARS_MAX_COUNT = 75;
 
@@ -70,6 +71,12 @@ export default {
     methods: {
         formSubmit(e){
             e.preventDefault();
+
+            let id = Math.floor(Math.random() * 9999)
+            let idString = new Intl.NumberFormat().format(id)
+            let priceString = new Intl.NumberFormat().format(this.producePrice)
+
+            Store.addProduct(idString, this.productName, this.productPrice, priceString, this.productDescription)
 
             //Create new ProductCard here
             axios.post('/store', {

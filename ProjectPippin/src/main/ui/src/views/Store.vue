@@ -3,9 +3,9 @@
         <Header title="Store" />
         <router-link to="/store/newProduct">New Product</router-link>
 
-        <ProductCard name = 'Spongebob SquarePants - Complete 3rd Season DVD Collection' 
-            price=25.00
-            description = 'Contains 4 DVDs of episodes from the 3rd season of Spongebob SquarePants' />
+        <div class="pippinStoreProducts" v-for="product in products" :key="product.id">
+            <ProductCard name=product.name price=product.price description=product.description /> 
+        </div> 
         <!-- <SimpleForm /> -->
     </div>
 </template> 
@@ -22,7 +22,27 @@ export default {
         Header, ProductCard
     },
     data() {
-        return {};
+        return {
+            products: [
+                {
+                    id: '0001',
+                    name: 'Spongebob SquarePants - Complete 3rd Season DVD Collection',
+                    price: '25.00',
+                    description: 'Contains 4 DVDs of episodes from the 3rd season of Spongebob SquarePants'
+                },
+                {
+                    id: '0002',
+                    name: 'Wax Seal Set',
+                    price: '40.00',
+                    description: 'Wax seal set'
+                }
+            ]
+        };
+    },
+    methods: {
+        addProduct(id, name, price, description){
+            this.products.push({id, name, price, description}); 
+        }
     }
 } 
 
