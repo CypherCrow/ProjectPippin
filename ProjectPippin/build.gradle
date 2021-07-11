@@ -23,7 +23,7 @@ dependencies {
 }
 
 neow3jCompiler {
-    className = "project.hackathon.jonah.pippin.contracts.PippinWarehouseContract"
+    className = "project.hackathon.jonah.pippin.contracts.ProductContract"
     debug = true
 }
 

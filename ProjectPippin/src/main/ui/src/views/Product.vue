@@ -1,6 +1,6 @@
 <template> 
     <div class="Product">
-        <Header title='{{ title }}' />
+        <Header />
 
         <div class="ProductDescriptionFull">
             <p>Blah blah blah blah blah</p>

@@ -1,7 +1,13 @@
 <template>
     <div class="PippinStorePage">
-        <Header title="Store" />
-        <router-link to="/store/newProduct">New Product</router-link><br/>
+        <Header />
+
+        <PageHeader title="Store" /> 
+        
+        <div class="StoreCreateProductSection">
+            <p>Thinking of having a second breakfast? Click this button:</p>
+            <Button @click="redirectToProductCreationPage()" buttonName="Upload Product"/>
+        </div> 
 
         <div class="PippinStoreProductsSection" v-for="product in products" :key="product.id">
             <ProductCard :name="product.name" :price="product.price" :description="product.description" /> 
@@ -13,13 +19,15 @@
 <script> 
 
 import Header from '@/components/Header.vue'
+import PageHeader from '@/components/PageHeader'
 import ProductCard from '@/components/ProductCard.vue'
+import Button from '@/components/Button'
 //import SimpleForm from './simple-form.vue'
 
 export default {
     name: 'Store',
     components: {
-        Header, ProductCard
+        Header, PageHeader, ProductCard, Button
     },
     data() {
         return {
@@ -45,6 +53,9 @@ export default {
     methods: {
         addProduct(id, name, price, description){
             this.products.push({id, name, price, description}); 
+        },
+        redirectToProductCreationPage(){
+            this.$router.push('/store/newProduct')
         }
     }
 } 
@@ -53,8 +64,22 @@ export default {
 
 <style scoped> 
 
+.PippinStorePage {
+    text-align: center;
+}
+
 .PippinStoreProductsSection {
     display: inline-block; 
+    justify-content: center; 
+    margin-top: 10px; 
+}
+
+.StoreCreateProductSection {
+    display: column; 
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px; 
+    padding: 5px 0 10px 0; 
 }
 
 </style> 

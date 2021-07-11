@@ -1,5 +1,5 @@
 <template> 
-    <button @click="onClick()" :style="{ background: color }">{{ buttonName }}</button>
+    <button :style="{background: color}" class="PippinButton">{{ buttonName }}</button>
 </template> 
 
 <script> 
@@ -11,23 +11,9 @@ export default {
         color: String
     }, 
     methods: {
-        onClick(){
-            console.log("Click!")
-        }
-    }
+
+    },
+
 }
 
-</script> 
-
-<style scoped> 
-
-button {
-    background: seagreen; 
-    color: white; 
-    margin: 5px; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 5px; 
-}
-
-</style> 
+</script>

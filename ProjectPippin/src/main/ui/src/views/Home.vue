@@ -1,6 +1,6 @@
 <template> 
     <div class="pippinHome">
-        <Header title='Pippin' />     
+        <Header />     
 
         <div class="pippinDashboardSection">
             <h1>WELCOME!</h1> 

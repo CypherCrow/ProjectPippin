@@ -1,27 +1,39 @@
 <template> 
-    <router-link to="/product/0001">
-        <div class="ProductCard">
-            <p id="image"><img alt="Default image provided" width="300px" height="300px" v-bind:src="image" /></p>
-            <p id="name">{{ name }}</p>
+    <div class="ProductCard">
+        <!--- <p id="image"><img alt="Default image provided" width="300px" height="300px" v-bind:src="image" /></p> -->
+        <div class="NameAndPrice">
+            <p id="name"><router-link to="/product/0001">{{ name }}</router-link></p>
             <p id="price">${{ price }}</p>
+        </div>
+
+        <div class="Description">
             <p id="description">{{ description }}</p>
         </div>
-    </router-link>
+
+        <div class="RateAndVote">
+            <Button buttonName="Vote for Removal" color="red"/>
+        </div>
+    </div>
 </template> 
 
 <script> 
+import Button from '@/components/Button'
 
 export default {
     name: 'ProductCard',
+    components: {
+        Button
+    },
     props: {
         name: String,
         price: String,
         description: String,
+        //link: String, <-- To be implemented later
         //image: Object
     },
     data() {
         return {
-            image: "@/assets/default_image.png",
+            //image: "@/assets/default_image.png",
         };
     }
 }
@@ -32,23 +44,24 @@ export default {
 
 .ProductCard {
     background: #f4f4f4;
-    margin: 5px; 
-    max-width: 500px;
+    margin: 15px; 
+    min-width: 300px; 
+    min-height: 300px; 
+    max-width: 700px;
     max-height: 1000px; 
     padding: 10px 20px;
-    cursor: pointer; 
     font-size: 14px;
     align-items: center;
-    border-radius: 15px; 
+    border-radius: 15px;
+    word-wrap: break-word;  
 }
 
-.ProductCard #name {
+#name {
     display: flex;
     float: left; 
-    word-wrap: break-word; 
 }
 
-.ProductCard #price {
+#price {
     display: flex;  
     text-align: right; 
     padding-left: 30px; 
@@ -57,16 +70,17 @@ export default {
     font-weight: bold; 
 }
 
-.ProductCard #description {
+#description {
     display: flex;
     text-align: center;
-    padding: 3px 0px;
+    padding: 5px 0px;
     margin-top: 60px;
 }
 
 /*  <router-link> is converted to <a> */
 a {
-    text-decoration: none; 
+    text-decoration: none;
+    cursor: pointer;  
 }
 
 </style> 

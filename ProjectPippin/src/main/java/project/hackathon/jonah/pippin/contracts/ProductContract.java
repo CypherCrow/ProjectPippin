@@ -22,7 +22,7 @@ public class ProductContract {
     static final StorageMap titleMap = ctx.createMap((byte) 2); 
     static final StorageMap priceMap = ctx.createMap((byte) 3);
     static final StorageMap descriptionMap = ctx.createMap((byte) 4); 
-    static final StorageMap imgHashMap = ctx.createMap((byte) 5); 
+    //static final StorageMap imgHashMap = ctx.createMap((byte) 5); 
 
     @OnDeployment
     public static void deploy(Object data, boolean update) throws Exception {
@@ -49,8 +49,8 @@ public class ProductContract {
      * @param imageHash
      * @return
      */
-    public static boolean createProduct(String productId, String title, String price, String description, ByteString imageHash){
-        if(productId == null || title ==  null || description == null || imageHash == null){
+    public static boolean createProduct(String productId, String title, String price, String description /*, ByteString imageHash */){
+        if(productId == null || title ==  null || description == null /*|| imageHash == null */){
             return false; 
         }
         if(Runtime.getCallingScriptHash() != getOwner()){
@@ -59,11 +59,11 @@ public class ProductContract {
         if(descriptionMap.get(productId) != null){
             return false; 
         }
-
-        descriptionMap.put(productId, description);
+        
         titleMap.put(productId, title);
         priceMap.put(productId, price); 
-        imgHashMap.put(productId, imageHash); 
+        descriptionMap.put(productId, description);
+        //imgHashMap.put(productId, imageHash); 
         return true;
     }
 
@@ -76,7 +76,7 @@ public class ProductContract {
         descriptionMap.delete(productId);
         titleMap.delete(productId);
         priceMap.delete(productId); 
-        imgHashMap.delete(productId);
+        //imgHashMap.delete(productId);
         return true;
     }
 

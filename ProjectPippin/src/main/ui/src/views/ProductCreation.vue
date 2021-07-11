@@ -7,9 +7,9 @@
         <!-- Must need image upload ---> 
         <!-- Products can be promoted or demoted; two types of votes: up and down; first 100 buyers is the minimum for product to be considered
             for promotion; those that voted down will have their GAS refunded -->
-        <form> 
+        <form @submit="onSubmit"> 
             <div class="productName"> <!-- Have input listeners on here -->
-                <label>Name: </label>
+                <label>Name</label><br/>
                 <input v-model="productName" name="productName" @keyup:enter="titleCharsCheck" />
 
                 <div class="titleCharacterCount"> 
@@ -18,7 +18,7 @@
             </div>
 
             <div class="productPrice">
-                <label>Price: </label>
+                <label>Price</label><br/>
                 <input v-model="productPrice" name="productPrice" />
             </div> 
 
@@ -32,7 +32,8 @@
             </div>
             
             <div class="createProduct">
-                <Button buttonName="Create Product" color="green" />
+                <!-- <Button buttonName="Create Product" /> -->
+                <input type="submit" value="Submit New Product" class="PippinButton" />
                 <br/>
                 <p>{{ output }}</p>
             </div> 
@@ -42,26 +43,24 @@
 
 <script>
 
-import axios from 'axios'
 import router from '@/router/index'
 //import { api } from '@cityofzion/neon-js'
 
 import Header from '@/components/Header.vue'
-import Button from '@/components/Button'
-import Store from '@/views/Store'
+//import Button from '@/components/Button'
 
 const DESCRIPTION_CHARS_MAX_COUNT = 125, TITLE_CHARS_MAX_COUNT = 75;
 
 export default {
     name: 'ProductCreation',
     components: {
-        Header, Button
+        Header, //Button
     },
     data() {
         return {
             productName: '',
-            productDescription: '',
             productPrice: 0.00,
+            productDescription: '',
             titleCharacterCount: 0,
             descriptionCharacterCount: 0,
             DESCRIPTION_CHARS_MAX_COUNT,
@@ -73,24 +72,32 @@ export default {
         formSubmit(e){
             e.preventDefault();
 
-            let id = Math.floor(Math.random() * 9999)
-            let idString = new Intl.NumberFormat().format(id)
-            let priceString = new Intl.NumberFormat().format(this.producePrice)
+            //let id = Math.floor(Math.random() * 9999)
+            //let idString = new Intl.NumberFormat().format(id)
+            //let priceString = new Intl.NumberFormat().format(this.producePrice)
 
-            Store.addProduct(idString, this.productName, this.productPrice, priceString, this.productDescription)
+            if(!this.productName && !this.productPrice && !this.productDescription){
+                alert('Form is incomplete: Input fields are empty')
+                return; 
+            }
 
-            //Create new ProductCard here
-            axios.post('/store', {
+            if(!this.productName || !this.productPrice || !this.productDescription){
+                alert('Form is incomplete: One of the input fields are empty')
+                return; 
+            }
+
+            const newProduct = {
+                id: Math.floor(Math.random() * 9999),
                 name: this.productName,
                 price: this.productPrice,
                 description: this.productDescription
-            })
-            .then((res) => {
-                console.log(res)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
+            }
+
+            this.$emit('add-product', newProduct)
+
+            this.productName = ''
+            this.productPrice = 0.00
+            this.productDescription = ''
 
             let count = 3            
 
@@ -141,11 +148,13 @@ form div {
 form div input {
     min-width: 100px;
     margin-left: 20px; 
+    margin-top: 10px; 
 }
 
 .productDescription textarea {
     min-width: 500px;
     min-height: 230px; 
+    margin: 10px 0 20px 0;
 }
 
 .titleCharacterCount {
@@ -154,5 +163,10 @@ form div input {
 
 .descriptionCharacterCount {
     padding-left: 400px; 
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px; 
 }
 </style>

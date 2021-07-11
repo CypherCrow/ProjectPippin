@@ -1,7 +1,9 @@
 <template> 
     <div class="pippinAbout"> 
-        <Header title="About" />
+        <Header />
 
+        <PageHeader title="About" />
+        
         <div class="pippinTextContent">
             <p>Pippin is a logistics application run on the Neo blockchain to streamline package deliveries. 
                 The way it does is the use of not only the Neo blockchain, but also its smart contracts.
@@ -17,11 +19,12 @@
 
 <script>
 import Header from '../components/Header.vue'
+import PageHeader from '@/components/PageHeader'
 
 export default {
     name: 'About',
     components: {
-        Header,
+        Header, PageHeader
     }
 }
 </script> 
