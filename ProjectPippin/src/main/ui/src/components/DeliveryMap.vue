@@ -5,24 +5,23 @@
         </div>
 
         <div class="DeliveryMapSection"> 
-
+            <div id="map" style="width: 400px; height: 300px"></div> 
         </div> 
     </div> 
 </template>
 
 <script>
-
+import GoogleMapsLoader from 'google-maps'
 
 export default {
     name: "DeliveryMap",
-    mounted(){
-        this.$loadScript("http://maps.google.com/maps?file=api&v=1&key=AIzaSyC5kZUpghzaI40k5JixW2cSHI3mrYv1NTM")
-            .then(() => {
-                console.log("Google Maps script loaded successfully")
+    mounted() {
+        GoogleMapsLoader.load((google) => {
+            this.map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15, 
+                center: {lat: -83.022206, lng: 39.998264}
             })
-            .catch(() => {
-                console.log("Failed to load Google Map script")
-            })
+        })
     }
 }
 </script>

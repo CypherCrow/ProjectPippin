@@ -7,21 +7,24 @@
         <div class="SignatoryForm"> 
 
             <form @submit="sign"> 
-                <div class="SignatoryFormSenderSection"> 
+                <div class="SenderSection"> 
                     <label>Sender: </label>
                     <input v-model="sender" name="sender" />
                 </div> 
 
-                <div class="SignatoryFormReceiverSection"> 
+                <div class="ReceiverSection"> 
                     <label>Receiver: </label>
                     <input v-model="receiver" name="receiver" />
                 </div> 
 
-                <div class="SignatoryFormShipmentDatesSection">
+                <div class="OrderIdSection">
+                    <label>Order ID: </label>
+                    <input v-model="orderId" name="orderId" /> 
+                </div>
+
+                <div class="ShipmentDatesSection">
                     <label>Shipment Dates:</label>
-                    <input v-model="shipmentDate" name="shipmentDates" />
-                    <Button @click="addShipmentDate" buttonName="Add Shipment Date" />
-                    <p>{{ shipmentDate }} is added to the Shipment Dates list behind the scenes</p>
+                    <input v-model="shipmentDate" name="shipmentDates" placeholder="Enter in this format: mm/dd/yyyy" />
                 </div>
 
                 <input type="submit" value="Sign" class="PippinButton" />
@@ -33,32 +36,29 @@
 <script> 
 import Header from '@/components/Header'
 import PageHeader from '@/components/PageHeader'
-import Button from '@/components/Button'
 
 export default {
     name: "ManufacturerSupplier",
     components: {
-        Header, PageHeader, Button
+        Header, PageHeader
     }, 
     data(){
         return {
             sender: '', 
             receiver: '',
-            shipmentDates: [],
+            orderId: '',
             shipmentDate: ''
         };
     },
     methods: {
-        addShipmentDate(){
-            this.shipmentDates = [...this.shipmentDates, this.shipmentDate]
-        },
         sign(e){
             e.preventDefault();
 
             const newTransaction = {
                 sender: this.sender,
                 receiver: this.receiver,
-                shipmentDates: this.shipmentDates
+                orderId: this.orderId,
+                shipmentDate: this.shipmentDate
             }
 
             this.$emit('add-transaction', newTransaction)

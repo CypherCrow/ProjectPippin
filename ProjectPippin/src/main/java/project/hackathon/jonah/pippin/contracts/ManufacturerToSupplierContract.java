@@ -8,6 +8,7 @@ import io.neow3j.devpack.StorageContext;
 import io.neow3j.devpack.StorageMap; 
 import io.neow3j.devpack.annotations.Safe;
 import io.neow3j.devpack.annotations.OnDeployment;
+//import io.neow3j.devpack.events.Event4Args;
 
 @ManifestExtra(key = "name", value="ManufacturerToSupplierContract")
 @ManifestExtra(key = "author", value="Pippin Project")
@@ -45,7 +46,5 @@ public class ManufacturerToSupplierContract {
     public static Hash160 getOwner(){
         return new Hash160(contractMap.get(OWNER_KEY)); 
     }
-
-    public static void 
 
 }

@@ -1,0 +1,40 @@
+{
+  "name" : "ManufacturerToSupplierContract",
+  "groups" : [ ],
+  "features" : { },
+  "supportedstandards" : [ ],
+  "abi" : {
+    "methods" : [ {
+      "name" : "_initialize",
+      "parameters" : [ ],
+      "offset" : 0,
+      "returntype" : "Void",
+      "safe" : false
+    }, {
+      "name" : "_deploy",
+      "parameters" : [ {
+        "name" : "data",
+        "type" : "Any"
+      }, {
+        "name" : "update",
+        "type" : "Boolean"
+      } ],
+      "offset" : 33,
+      "returntype" : "Void",
+      "safe" : false
+    }, {
+      "name" : "getOwner",
+      "parameters" : [ ],
+      "offset" : 215,
+      "returntype" : "Hash160",
+      "safe" : true
+    } ],
+    "events" : [ ]
+  },
+  "permissions" : [ ],
+  "trusts" : [ ],
+  "extra" : {
+    "author" : "Pippin Project",
+    "name" : "ManufacturerToSupplierContract"
+  }
+}

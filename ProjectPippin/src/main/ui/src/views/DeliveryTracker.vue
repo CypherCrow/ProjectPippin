@@ -9,7 +9,7 @@
         <!-- Package has unique identifier to verify that the package is actually for the user -->
 
         <div class="TrackerMap">
-            <p>Map goes here.</p>
+            <DeliveryMap />
         </div>
 
         <div class="DeliveryContractTracer"> 
@@ -23,11 +23,12 @@
 import Header from '@/components/Header.vue'
 import PageHeader from '@/components/PageHeader'
 import ContractTransactionsList from '@/components/ContractTransactionsList'
+import DeliveryMap from '@/components/DeliveryMap'
 
 export default {
     name: 'DeliveryTracker',
     components: {
-        Header, PageHeader, ContractTransactionsList
+        Header, PageHeader, ContractTransactionsList, DeliveryMap
     }
 }
 
