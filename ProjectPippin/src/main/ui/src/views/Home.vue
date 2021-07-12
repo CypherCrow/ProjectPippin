@@ -1,8 +1,8 @@
 <template> 
-    <div class="pippinHome">
+    <div class="PippinHome">
         <Header />     
 
-        <div class="pippinDashboardSection">
+        <div class="PippinDashboardSection">
             <h1>WELCOME!</h1> 
             <p>
                 Pippin: an e-commerce site on the Neo N3 blockchain.
@@ -26,11 +26,11 @@ export default {
 
 <style scoped> 
 
-.pippinDashboardSection {
+.PippinDashboardSection {
     text-align: center; 
 }
 
-.pippinDashboardSection h1 {
+.PippinDashboardSection h1 {
     font-size: 3.0em; 
 }
 

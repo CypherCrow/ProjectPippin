@@ -1,6 +1,18 @@
 <template> 
-    <div class="ContractTransactionsList">
-    
+    <div class="ContractTransactionsList"> 
+
+        <div class="ListHeader">
+            <h3>Transaction List</h3>
+        </div>
+        
+        <div class="List" v-for="transaction in contractTransactions" :key="transaction.id">     
+            <ContractTransactionCard 
+                :contract="transaction.contract" 
+                :sender="transaction.sender"
+                :receiver="transaction.receiver"
+                :date="transaction.date" />
+        </div>
+
     </div>
 </template>
 
@@ -22,6 +34,10 @@ export default {
         this.contractTransactions = [
             {
                 id: 1,
+                contract: 'AccountCountract',
+                sender: 'Pippin Project',
+                receiver: 'You', 
+                date: '7/11/2021'
             }
         ]
     }

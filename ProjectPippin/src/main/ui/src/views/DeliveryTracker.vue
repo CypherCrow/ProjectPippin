@@ -3,7 +3,9 @@
 
         <Header />
 
-        <PageHeader title="Delivery Tracker" />
+        <div class="PageHeader">
+            <PageHeader title="Delivery Tracker" />
+        </div>
         <!-- Package has unique identifier to verify that the package is actually for the user -->
 
         <div class="TrackerMap">
@@ -11,7 +13,7 @@
         </div>
 
         <div class="DeliveryContractTracer"> 
-            <p>Contract transactions go here</p>
+            <ContractTransactionsList />
         </div>
     </div> 
 </template>
@@ -20,11 +22,12 @@
 
 import Header from '@/components/Header.vue'
 import PageHeader from '@/components/PageHeader'
+import ContractTransactionsList from '@/components/ContractTransactionsList'
 
 export default {
     name: 'DeliveryTracker',
     components: {
-        Header, PageHeader
+        Header, PageHeader, ContractTransactionsList
     }
 }
 
@@ -33,7 +36,6 @@ export default {
 <style scoped>
 
 .DeliveryTracker {
-    text-align: center;
     display: inline-block;
     justify-content: space-around;
 }

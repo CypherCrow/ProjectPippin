@@ -2,16 +2,17 @@
     <div class="pippinAbout"> 
         <Header />
 
-        <PageHeader title="About" />
-        
-        <div class="pippinTextContent">
+        <div class="PageHeader">
+            <PageHeader title="About" />
+        </div> 
+
+        <div class="AboutContent">
             <p>Pippin is a logistics application run on the Neo blockchain to streamline package deliveries. 
                 The way it does is the use of not only the Neo blockchain, but also its smart contracts.
                 Smart contracts automate the forms needed to deliver a package, and from this, paperwork is reduced. 
                 All it needs is typed input.
                 <br/><br/> 
-                Blockchain helps to ensure data integrity. And also, it is made available for the customer and 
-                supply chain parties to view. In this way, packages are delivered safely. 
+                All purchases are paid with NEO and GAS.
             </p>
         </div>
     </div>
@@ -28,3 +29,12 @@ export default {
     }
 }
 </script> 
+
+<style scoped> 
+
+.AboutContent {
+    margin-left: 100px;
+    margin-right: 100px; 
+}
+
+</style> 

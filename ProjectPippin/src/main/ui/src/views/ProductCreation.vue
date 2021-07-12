@@ -93,7 +93,7 @@ export default {
             const newProduct = {
                 id: Math.floor(Math.random() * 9999),
                 name: this.productName,
-                price: this.productPrice.toFixed(2),
+                price: Number(this.productPrice).toFixed(2).toString(),
                 description: this.productDescription
             }
 
@@ -146,10 +146,6 @@ export default {
 <style scoped>
 .ProductCreation {
     flex-direction: column; 
-}
-
-.PageHeader {
-    text-align: center; 
 }
 
 form {

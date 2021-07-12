@@ -7,22 +7,22 @@
         </div>
 
         <div class="Description">
-            <p id="description">{{ description }}</p>
+            <p>{{ description }}</p>
         </div>
 
         <div class="RateAndVote">
-            <Button buttonName="Vote for Removal" color="red"/>
+            <!-- <Button buttonName="Vote for Removal" color="red"/> --> 
         </div>
     </div>
 </template> 
 
 <script> 
-import Button from '@/components/Button'
+//import Button from '@/components/Button'
 
 export default {
     name: 'ProductCard',
     components: {
-        Button
+        //Button
     },
     props: {
         name: String,
@@ -47,6 +47,8 @@ export default {
     margin: 15px; 
     min-width: 300px; 
     min-height: 300px; 
+    width: 500px; 
+    height: 300px;
     max-width: 700px;
     max-height: 1000px; 
     padding: 10px 20px;
@@ -69,12 +71,13 @@ export default {
     color: maroon; 
     font-weight: bold; 
 }
-
-#description {
+.Description {
     display: flex;
     text-align: center;
     padding: 5px 0px;
     margin-top: 60px;
+    max-width: 500px;
+    width: 500px;
 }
 
 /*  <router-link> is converted to <a> */

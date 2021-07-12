@@ -14,6 +14,10 @@ export default {
 
 <style> 
 
+/* * {
+    background: rgb(0, 53, 167); 
+} */
+
 #app {
     font-family: Arial, Helvetica, sans-serif; 
     flex-direction: column;
@@ -33,6 +37,10 @@ export default {
 .PippinButton:hover {
     background: maroon;
     color: white;
+}
+
+.PageHeader {
+    text-align: center;
 }
 
 </style> 
