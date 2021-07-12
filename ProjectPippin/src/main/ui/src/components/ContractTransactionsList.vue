@@ -5,7 +5,7 @@
             <h3>Transaction List</h3>
         </div>
         
-        <div class="List" v-for="transaction in contractTransactions" :key="transaction.id">     
+        <div class="List" v-for="transaction in $store.state.contractTransactions" :key="transaction.id">     
             <ContractTransactionCard 
                 :contract="transaction.contract" 
                 :sender="transaction.sender"
@@ -27,21 +27,13 @@ export default {
     components: {
         ContractTransactionCard
     },
-    /* data(){
-        return {
-            contractTransactions: []
-        }; 
-    }, */
     computed: {
-        contractTransactions(){
-            return this.$store.state.contractTransactions;
+        contractTransactions: {
+            get(){
+                return this.$store.state.contractTransactions
+            }
         }
     }, 
-    methods: {
-        addTransaction(newTransaction){
-            this.$store.state.contractTransactions.push(newTransaction)
-        }
-    }
 }
 
 </script> 
