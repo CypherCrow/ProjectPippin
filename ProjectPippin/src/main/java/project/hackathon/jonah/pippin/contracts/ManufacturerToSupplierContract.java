@@ -8,6 +8,7 @@ import io.neow3j.devpack.StorageContext;
 import io.neow3j.devpack.StorageMap; 
 import io.neow3j.devpack.annotations.Safe;
 import io.neow3j.devpack.annotations.OnDeployment;
+import io.neow3j.devpack.Runtime; 
 //import io.neow3j.devpack.events.Event4Args;
 
 @ManifestExtra(key = "name", value="ManufacturerToSupplierContract")
@@ -21,7 +22,8 @@ public class ManufacturerToSupplierContract {
     static StorageContext ctx = Storage.getStorageContext();
     //contractMap: map of elements containing metadata on each contract issued;
     static final StorageMap contractMap = ctx.createMap((byte) 1); 
-    static final StorageMap shipmentDatesMap = ctx.createMap((byte) 6);
+    static final StorageMap receiverMap = ctx.createMap((byte) 2);
+    static final StorageMap shipmentDateMap = ctx.createMap((byte) 3);
 
     // To be implemented later 
     //static final StorageMap certificateOriginMap = ctx.createMap((byte) 2);
@@ -45,6 +47,32 @@ public class ManufacturerToSupplierContract {
     @Safe
     public static Hash160 getOwner(){
         return new Hash160(contractMap.get(OWNER_KEY)); 
+    }
+
+    public static boolean signOrder(String orderId,  String receiver, String shipmentDate){
+        if(receiver == null || orderId == null || shipmentDate == null){
+            return false; 
+        }
+        if(Runtime.getCallingScriptHash() != getOwner()){
+            return false; 
+        }
+        if(receiverMap.get(orderId) != null || shipmentDateMap.get(orderId) != null){
+            return false;
+        }
+
+        receiverMap.put(orderId, receiver); 
+        shipmentDateMap.put(orderId, shipmentDate);
+        return true; 
+    }
+
+    public static boolean deleteOrder(String orderId){
+        if(Runtime.getCallingScriptHash() != getOwner()){
+            return false; 
+        }
+
+        receiverMap.delete(orderId); 
+        shipmentDateMap.delete(orderId); 
+        return true;
     }
 
 }

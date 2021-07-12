@@ -9,13 +9,14 @@
             Respective Smart Contract Details
         -->
         <div class="CardHeaderSection">
-            <h3>{{ contract }}</h3><p id="Date"> - {{ date }}</p>
+            <h3>{{ contract }}</h3><p id="Date"> - {{ currentDate }}</p>
         </div> 
 
         <div class="SenderReceiverOrderSection">
             <p id="Sender"><b>Sender:</b> {{ sender }}</p> 
             <p id="Receiver"><b>Receiver:</b> {{ receiver }}</p> 
             <p id="OrderId"><b>Order ID:</b> {{ orderId }}</p>
+            <p id="ShipmentDate"><b>Shipment Date:</b> {{ shipmentDate }}</p> 
         </div>
     </div> 
 </template>
@@ -29,7 +30,8 @@ export default {
         sender: String, 
         receiver: String, 
         orderId: String,
-        date: String,
+        shipmentDate: String,
+        currentDate: String,
         //shipmentDates: String 
     }
 }
@@ -71,6 +73,10 @@ export default {
 .SenderReceiverOrderSection {
     display: inline; 
     text-align: center; 
+}
+
+.SenderReceiverOrderSection #sender #receiver #order {
+    float: left; 
 }
 
 </style>

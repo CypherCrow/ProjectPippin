@@ -1,0 +1,11 @@
+[
+  {
+    "contract": "ManufacturerToSupplierContract",
+    "operation": "signOrder",
+    "args": [
+      372182,
+      "Nuts",
+      "7/12/2021"
+    ]
+  }
+]

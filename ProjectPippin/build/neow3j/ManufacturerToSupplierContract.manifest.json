@@ -19,15 +19,39 @@
         "name" : "update",
         "type" : "Boolean"
       } ],
-      "offset" : 33,
+      "offset" : 42,
       "returntype" : "Void",
       "safe" : false
     }, {
       "name" : "getOwner",
       "parameters" : [ ],
-      "offset" : 215,
+      "offset" : 224,
       "returntype" : "Hash160",
       "safe" : true
+    }, {
+      "name" : "signOrder",
+      "parameters" : [ {
+        "name" : "orderId",
+        "type" : "String"
+      }, {
+        "name" : "receiver",
+        "type" : "String"
+      }, {
+        "name" : "shipmentDate",
+        "type" : "String"
+      } ],
+      "offset" : 239,
+      "returntype" : "Boolean",
+      "safe" : false
+    }, {
+      "name" : "deleteOrder",
+      "parameters" : [ {
+        "name" : "orderId",
+        "type" : "String"
+      } ],
+      "offset" : 333,
+      "returntype" : "Boolean",
+      "safe" : false
     } ],
     "events" : [ ]
   },

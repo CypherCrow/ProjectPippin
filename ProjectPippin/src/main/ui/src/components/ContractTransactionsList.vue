@@ -11,7 +11,8 @@
                 :sender="transaction.sender"
                 :receiver="transaction.receiver"
                 :orderId="transaction.orderId"
-                :date="transaction.date" />
+                :shipmentDate="transaction.shipmentDate"
+                :currentDate="transaction.currentDate" />
         </div>
 
     </div>
@@ -26,26 +27,19 @@ export default {
     components: {
         ContractTransactionCard
     },
-    data(){
+    /* data(){
         return {
             contractTransactions: []
         }; 
-    },
-    created(){
-        this.contractTransactions = [
-            {
-                id: 1,
-                contract: 'OrderContract',
-                sender: 'Pippin Project',
-                receiver: 'You', 
-                orderId: '372182',
-                date: '7/11/2021'
-            }
-        ]
+    }, */
+    computed: {
+        contractTransactions(){
+            return this.$store.state.contractTransactions;
+        }
     }, 
     methods: {
         addTransaction(newTransaction){
-            this.contractTransactions = [...this.contractTransactions, newTransaction]
+            this.$store.state.contractTransactions.push(newTransaction)
         }
     }
 }

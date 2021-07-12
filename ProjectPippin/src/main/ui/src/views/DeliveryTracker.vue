@@ -44,7 +44,7 @@ export default {
     float: left; 
     border: 1px solid black; 
     border-radius: 5px; 
-    margin-left: 20%;
+    margin-left: 15%;
     margin-right: 5px; 
 }
 

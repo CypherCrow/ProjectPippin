@@ -29,26 +29,15 @@ export default {
     components: {
         Header, PageHeader, ProductCard, Button
     },
-    data() {
+    /* data() {
         return {
             products: []
         };
-    },
-    created(){
-        this.products = [
-            {
-                id: 1,
-                name: 'Spongebob SquarePants - Complete 3rd Season DVD Collection',
-                price: '25.00',
-                description: 'Contains 4 DVDs of episodes from the 3rd season of Spongebob SquarePants'
-            },
-            {
-                id: 2,
-                name: 'Wax Seal Set',
-                price: '40.00',
-                description: 'Wax seal set'
-            }
-        ]
+    },*/
+    computed: {
+        products(){
+            return this.$store.state.products;
+        }
     },
     methods: {
         addProduct(newProduct){
