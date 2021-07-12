@@ -35,6 +35,9 @@ const store = createStore({
         addProduct(state, newProduct){
             state.products.push(newProduct)
         },
+        addTransaction(state, newTransaction){
+            state.contractTransactions.push(newTransaction)
+        }
     },
     // NOTE: Can have asynchronous code for awaiting response from an API
     //Triggering actions are called "dispatches," so use "dispatch()"

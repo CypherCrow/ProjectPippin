@@ -61,7 +61,7 @@ export default {
                 shipmentDate: this.shipmentDate
             }
 
-            this.$emit('add-transaction', newTransaction)
+            this.$store.commit('addTransaction', newTransaction)
         }
     }
 }
