@@ -8,27 +8,27 @@
 
             <form @submit="sign"> 
                 <div class="SenderSection"> 
-                    <label>Sender: </label>
+                    <label><b>Sender:</b> </label>
                     <input v-model="sender" name="sender" />
                 </div> 
 
                 <div class="ReceiverSection"> 
-                    <label>Receiver: </label>
+                    <label><b>Receiver:</b></label>
                     <input v-model="receiver" name="receiver" />
                 </div> 
 
                 <div class="OrderIdSection">
-                    <label>Order ID: </label>
+                    <label><b>Order ID:</b></label>
                     <input v-model="orderId" name="orderId" /> 
                 </div>
 
                 <div class="ShipmentDateSection">
-                    <label>Shipment Date:</label>
+                    <label><b>Shipment Date:</b></label>
                     <input v-model="shipmentDate" name="shipmentDates" placeholder="Enter in this format: mm/dd/yyyy" />
                 </div>
 
                 <div class="CurrentDateSection">
-                    <label>Current Date:</label>
+                    <label><b>Current Date:</b></label>
                     <input v-model="currentDate" name="currentDate" placeholder="Enter in this format: mm/dd/yyyy" />
                 </div>
 
@@ -77,6 +77,8 @@ export default {
             this.orderId = ''
             this.shipmentDate = ''
             this.currentDate = ''
+
+            this.$router.push({path: '/delivery-tracker'})
         }
     }
 }
@@ -96,8 +98,14 @@ export default {
     float: right; 
 }
 
-form {
-    margin-left: 140px; 
+form { 
+    border: 1px solid black; 
+    border-radius: 5px;
+    margin: 0 400px; 
+    width: 500px; 
+    height: 350px; 
+    min-width: 1000px;
+    min-height: 350px; 
 }
 
 form div {

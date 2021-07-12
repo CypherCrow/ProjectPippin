@@ -1,13 +1,13 @@
 package project.hackathon.jonah.pippin.contracts; 
 
 import io.neow3j.devpack.annotations.ManifestExtra;
-import io.neow3j.devpack.ByteString;
+//import io.neow3j.devpack.ByteString;
 import io.neow3j.devpack.Hash160;
 import io.neow3j.devpack.Storage;
 import io.neow3j.devpack.StorageContext;
 import io.neow3j.devpack.StorageMap; 
 import io.neow3j.devpack.annotations.Safe;
-import io.neow3j.devpack.annotations.OnDeployment;
+//import io.neow3j.devpack.annotations.OnDeployment;
 import io.neow3j.devpack.Runtime; 
 //import io.neow3j.devpack.events.Event4Args;
 
@@ -31,7 +31,7 @@ public class ManufacturerToSupplierContract {
     //static final StorageMap processingDataMap = ctx.createMap((byte) 4); 
     //static final StorageMap barcodeMap = ctx.createMap((byte) 5); 
 
-    @OnDeployment
+    /* @OnDeployment
     public static void deploy(Object data, boolean update) throws Exception {
         if(!update){
             if(data == null){
@@ -42,7 +42,7 @@ public class ManufacturerToSupplierContract {
             }
             contractMap.put(OWNER_KEY, (ByteString) data); 
         }
-    }
+    } */
 
     @Safe
     public static Hash160 getOwner(){

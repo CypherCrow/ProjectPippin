@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
     "vue-router": "^4.0.10",
+    "vue-virtual-scroll-list": "^2.3.2",
     "vue3-google-map": "^0.8.0",
     "vuex": "^4.0.2"
   },

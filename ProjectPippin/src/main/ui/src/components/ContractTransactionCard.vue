@@ -41,7 +41,7 @@ export default {
 <style scoped> 
 .ContractTransactionCard {
     background: #f7f7f7;
-    margin: 15px; 
+    margin-top: 15px 5px; 
     padding: 10px 20px;
     font-size: 14px;
     align-content: center;

@@ -71,6 +71,23 @@
           }
         }
       ]
+    },
+    {
+      "name": "alice",
+      "accounts": [
+        {
+          "private-key": "9240f7546251b97b47eb3580c11e804264ae4dcdc91b558575e874f2b5c0dccd",
+          "script-hash": "NN5SZ4vQyUjLRNAQiq6PAjRSRgthUMY7bT",
+          "label": null,
+          "is-default": true,
+          "contract": {
+            "script": "0c21022a2cd06af109eec81b573b139e0fb89a7f0ff8846767cc6206c54566c89591234156e7b327",
+            "parameters": [
+              "Signature"
+            ]
+          }
+        }
+      ]
     }
   ],
   "settings": {}

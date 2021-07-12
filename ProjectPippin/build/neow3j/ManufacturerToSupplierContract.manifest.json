@@ -11,21 +11,9 @@
       "returntype" : "Void",
       "safe" : false
     }, {
-      "name" : "_deploy",
-      "parameters" : [ {
-        "name" : "data",
-        "type" : "Any"
-      }, {
-        "name" : "update",
-        "type" : "Boolean"
-      } ],
-      "offset" : 42,
-      "returntype" : "Void",
-      "safe" : false
-    }, {
       "name" : "getOwner",
       "parameters" : [ ],
-      "offset" : 224,
+      "offset" : 42,
       "returntype" : "Hash160",
       "safe" : true
     }, {
@@ -40,7 +28,7 @@
         "name" : "shipmentDate",
         "type" : "String"
       } ],
-      "offset" : 239,
+      "offset" : 57,
       "returntype" : "Boolean",
       "safe" : false
     }, {
@@ -49,7 +37,7 @@
         "name" : "orderId",
         "type" : "String"
       } ],
-      "offset" : 333,
+      "offset" : 151,
       "returntype" : "Boolean",
       "safe" : false
     } ],

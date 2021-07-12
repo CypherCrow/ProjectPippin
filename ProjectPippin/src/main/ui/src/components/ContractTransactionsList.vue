@@ -15,6 +15,14 @@
                 :currentDate="transaction.currentDate" />
         </div>
 
+        <!--- <virtual-list
+            :data-key="'id'"
+            :data-sources="$store.state.contractTransactions"
+            :data-component="dataComponent"
+            :estimate-size="50"
+        >
+        </virtual-list> --->
+
     </div>
 </template>
 
@@ -26,6 +34,11 @@ export default {
     name: "ContractTransactionsList",
     components: {
         ContractTransactionCard
+    },
+    data(){
+        return {
+            dataComponent: ContractTransactionCard
+        };
     },
     computed: {
         contractTransactions: {
@@ -49,9 +62,8 @@ export default {
 }
 
 .List {
-    height: 500px; 
     overflow: hidden; 
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 5px;  
 }
 

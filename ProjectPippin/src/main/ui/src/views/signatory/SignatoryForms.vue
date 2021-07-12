@@ -7,7 +7,11 @@
         <div class="FormsList"> 
             <ul>
                 <li><router-link to="/signatoryforms/manufacturer-to-supplier">Manufacturer-to-Supplier</router-link></li>
-                <li><router-link to="/signatoryforms/supplier-to-logistics-3pl">Supplier-to-Logistics 3PL</router-link></li>  
+                <li><router-link to="/signatoryforms/supplier-to-logistics-3pl">Supplier-to-Logistics 3PL</router-link></li>
+                <li>Logistics 3PL-to-Long Haul Carrier</li> 
+                <li>Long Haul Carrier-to-Warehouse</li>
+                <li>Warehouse-to-Short Haul Carrier</li>
+                <li>Short Haul Carrier-to-Cosignee</li>
             </ul>
         </div>
     </div> 

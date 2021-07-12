@@ -53,6 +53,7 @@ export default {
     border: 1px solid black; 
     border-radius: 5px;  
     margin-left: 5px; 
+    height: 569px; 
 }
 
 </style> 

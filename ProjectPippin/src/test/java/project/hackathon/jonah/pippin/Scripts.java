@@ -28,10 +28,10 @@ public class Scripts {
     private static ObjectMapper objectMapper = new ObjectMapper();
 
     private static final File MANUFACTURER_TO_SUPPLIER_NEF_FILE = 
-        Paths.get("./build/neow3j/ManufacturerToSupplier.nef").toFile();
+        Paths.get("C:/Users/Akanb/Documents/GitHub/ProjectPippin/ProjectPippin/build/neow3j/ManufacturerToSupplierContract.nef").toFile();
 
     private static final File MANUFACTURER_TO_SUPPLIER_MANIFEST_FILE = 
-        Paths.get("./build/neow3j/ManufacturerToSupplier.manifest.json").toFile();
+        Paths.get("C:/Users/Akanb/Documents/GitHub/ProjectPippin/ProjectPippin/build/neow3j/ManufacturerToSupplierContract.manifest.json").toFile();
 
     private static ContractManagement contractMgmt = new ContractManagement(neow);
 
