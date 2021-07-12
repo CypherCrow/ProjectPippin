@@ -29,7 +29,7 @@
             </div> 
 
             <div class="productDescription"> <!-- Have input listeners on here -->
-                <label>Description: </label><br/>
+                <label>Description</label><br/>
                 <textarea v-model="productDescription" name="productDescription" @keyup:enter="descriptionCharsCheck" />
 
                 <div class="descriptionCharacterCount">
@@ -53,7 +53,7 @@
 import Header from '@/components/Header.vue'
 import PageHeader from '@/components/PageHeader'
 
-const DESCRIPTION_CHARS_MAX_COUNT = 125, TITLE_CHARS_MAX_COUNT = 75;
+const DESCRIPTION_CHARS_MAX_COUNT = 125, TITLE_CHARS_MAX_COUNT = 60;
 
 export default {
     name: 'ProductCreation',
@@ -85,8 +85,18 @@ export default {
                 return; 
             }
 
-            if(!this.productName || !this.productPrice || !this.productDescription){
-                alert('Form is incomplete: One of the input fields are empty')
+            if(!this.productName){
+                alert('Form is incomplete: Name is empty')
+                return; 
+            }
+            
+            if(!this.productPrice){
+                alert('Form is incomplete: Price is still set to zero')
+                return; 
+            }
+            
+            if(!this.productDescription){
+                alert('Form is incomplete: Description is empty')
                 return; 
             }
 

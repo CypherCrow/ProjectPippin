@@ -27,7 +27,7 @@ export default {
 .PippinButton {
     background: seagreen; 
     color: white; 
-    margin: 5px; 
+    margin: 5px;  
     padding: 10px 20px; 
     border: none; 
     border-radius: 5px; 

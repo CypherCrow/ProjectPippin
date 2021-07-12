@@ -40,7 +40,31 @@ export default {
                 date: '7/11/2021'
             }
         ]
+    }, 
+    methods: {
+        addTransaction(newTransaction){
+            this.contractTransactions = [...this.contractTransactions, newTransaction]
+        }
     }
 }
 
 </script> 
+
+<style scoped> 
+
+.ContractTransactionList {
+    align-content: center; 
+}
+
+.ListHeader {
+    text-align: center; 
+}
+
+.List {
+    height: 500px; 
+    overflow: hidden; 
+    overflow-y: scroll;
+    padding: 5px;  
+}
+
+</style>

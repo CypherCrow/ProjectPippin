@@ -8,10 +8,14 @@
             Receiver
             Respective Smart Contract Details
         -->
-        <h3>{{ contract }}</h3>
-        <p id="Sender"><b>Sender:</b> {{ sender }}</p> 
-        <p id="Receiver"><b>Receiver:</b> {{ receiver }}</p>
-        <p id="Date"><b>Date:</b> {{ date }}</p> 
+        <div class="CardHeaderSection">
+            <h3>{{ contract }}</h3><p id="Date"> - {{ date }}</p>
+        </div> 
+
+        <div class="SenderReceiverSection">
+            <p id="Sender"><b>Sender:</b> {{ sender }}</p> 
+            <p id="Receiver"><b>Receiver:</b> {{ receiver }}</p> 
+        </div>
     </div> 
 </template>
 
@@ -23,7 +27,8 @@ export default {
         contract: String,
         sender: String, 
         reciever: String, 
-        date: String
+        date: String,
+        //shipmentDates: String 
     }
 }
 
@@ -54,6 +59,14 @@ export default {
 .ContractTransactionCard #receiver {
     text-align: right; 
     float: right; 
+}
+
+.CardHeaderSection {
+    display: inline; 
+}
+
+.SenderReceiverSection {
+    display: inline; 
 }
 
 </style>

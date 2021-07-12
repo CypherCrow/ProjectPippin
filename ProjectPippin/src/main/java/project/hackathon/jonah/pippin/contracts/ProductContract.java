@@ -43,10 +43,10 @@ public class ProductContract {
      * Creates a product
      * 
      * 
-     * @param productId
-     * @param title
-     * @param description
-     * @param imageHash
+     * @param productId id for the product
+     * @param title name for the product
+     * @param description product's description
+     * @param imageHash image of the product
      * @return
      */
     public static boolean createProduct(String productId, String title, String price, String description /*, ByteString imageHash */){

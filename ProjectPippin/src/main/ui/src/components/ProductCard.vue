@@ -54,23 +54,26 @@ export default {
     padding: 10px 20px;
     font-size: 14px;
     align-items: center;
-    border-radius: 15px;
-    word-wrap: break-word;  
+    border-radius: 15px; 
+}
+
+.NameAndPrice {
+    display: inline; 
 }
 
 #name {
-    display: flex;
     float: left; 
+    word-wrap: break-word;  
 }
 
-#price {
-    display: flex;  
-    text-align: right; 
+#price { 
+    /* text-align: right; */ 
     padding-left: 30px; 
     float: right; 
     color: maroon; 
-    font-weight: bold; 
+    font-weight: bold;  
 }
+
 .Description {
     display: flex;
     text-align: center;
@@ -78,6 +81,7 @@ export default {
     margin-top: 60px;
     max-width: 500px;
     width: 500px;
+    word-wrap: break-word;
 }
 
 /*  <router-link> is converted to <a> */

@@ -1,7 +1,7 @@
 <template>
     <div class="PippinHeader">
         
-        <h1>{{ title }}</h1>
+        <div class="HeaderTitle">{{ title }}</div>
 
         <ul class="HeaderLinksSection">
             <li class="HeaderLink">
@@ -55,16 +55,19 @@ export default {
 
 .HeaderLinksSection {
     margin-left: 10px;
-        
 }
 
 .HeaderLink {
     display: inline; 
-    list-style: none; 
+    list-style: none;
+    margin-right: 5px;  
 }
 
-h1 {
-    float: left; 
+.HeaderTitle {
+    float: left;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.6em;  
 }
 
 a {

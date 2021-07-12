@@ -7,14 +7,14 @@
         </div> 
 
         <div class="ProductOptions">
-            <button>Add to Cart</button>
-            <button>Rate Product</button>
+            <Button buttonTitle="Add to Cart" />
         </div> 
     </div> 
 </template> 
 
 <script> 
 import Header from '@/components/Header'
+import Button from '@/components/Button'
 
 export default {
     name: 'Product',
@@ -25,7 +25,7 @@ export default {
         }
     },
     components: {
-        Header,
+        Header, Button
     }
 }
 

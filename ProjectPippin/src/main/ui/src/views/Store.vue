@@ -56,6 +56,9 @@ export default {
         },
         redirectToProductCreationPage(){
             this.$router.push('/store/newProduct')
+
+            //to measure how long this string is to apply character limit for title: 
+            //console.log('Spongebob SquarePants - Complete 3rd Season DVD CollectionSq'.length)
         }
     }, 
     emits: ['add-product']

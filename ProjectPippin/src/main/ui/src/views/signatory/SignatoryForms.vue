@@ -6,7 +6,8 @@
 
         <div class="FormsList"> 
             <ul>
-                <li><router-link to="/signatoryforms/manufacturer-to-supplier">Manufacturer-to-Supplier</router-link></li> 
+                <li><router-link to="/signatoryforms/manufacturer-to-supplier">Manufacturer-to-Supplier</router-link></li>
+                <li><router-link to="/signatoryforms/supplier-to-logistics-3pl">Supplier-to-Logistics 3PL</router-link></li>  
             </ul>
         </div>
     </div> 

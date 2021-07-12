@@ -18,13 +18,15 @@ public class ManufacturerToSupplierContract {
     //StorageContext = gateway to a contract's storage
     //can be passed to other contracts for the latter to perform read/write ops on current contract's persistent storage 
     static StorageContext ctx = Storage.getStorageContext();
-    //metadata on contract;
+    //contractMap: map of elements containing metadata on each contract issued;
     static final StorageMap contractMap = ctx.createMap((byte) 1); 
-    static final StorageMap certificateOriginMap = ctx.createMap((byte) 2);
-    static final StorageMap batchNumberMap = ctx.createMap((byte) 3); 
-    static final StorageMap processingDataMap = ctx.createMap((byte) 4); 
-    static final StorageMap barcodeMap = ctx.createMap((byte) 5); 
-    static final StorageMap shipmentDateMap = ctx.createMap((byte) 6);
+    static final StorageMap shipmentDatesMap = ctx.createMap((byte) 6);
+
+    // To be implemented later 
+    //static final StorageMap certificateOriginMap = ctx.createMap((byte) 2);
+    //static final StorageMap batchNumberMap = ctx.createMap((byte) 3); 
+    //static final StorageMap processingDataMap = ctx.createMap((byte) 4); 
+    //static final StorageMap barcodeMap = ctx.createMap((byte) 5); 
 
     @OnDeployment
     public static void deploy(Object data, boolean update) throws Exception {
@@ -43,5 +45,7 @@ public class ManufacturerToSupplierContract {
     public static Hash160 getOwner(){
         return new Hash160(contractMap.get(OWNER_KEY)); 
     }
+
+    public static void 
 
 }

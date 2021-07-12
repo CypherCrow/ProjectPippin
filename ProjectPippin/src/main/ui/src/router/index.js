@@ -4,7 +4,8 @@ import About from '@/views/About.vue'
 import Store from '@/views/Store.vue'
 import Home from '@/views/Home.vue'
 import ProductCreation from '@/views/ProductCreation'
-import ManufacturerSupplier from '@/views/signatory/ManufacturerSupplier'
+import ManufacturerToSupplier from '@/views/signatory/ManufacturerToSupplier'
+import SupplierToLogistics3PL from '@/views/signatory/SupplierToLogistics3PL'
 import Product from '@/views/Product'
 import Account from '@/views/Account'
 import DeliveryTracker from '@/views/DeliveryTracker'
@@ -53,9 +54,14 @@ const routes = [
     },
     {
         path: '/signatoryforms/manufacturer-to-supplier', //smart contract transaction will show up on Manufacturer's page; stats will show (e.g., how many smart contracts are signed, how they're received by clients)
-        name: "ManufacturerSupplier",
-        component: ManufacturerSupplier
-    }
+        name: "ManufacturerToSupplier",
+        component: ManufacturerToSupplier
+    }, 
+    {
+        path: '/signatoryforms/supplier-to-logistics-3pl',
+        name: "SupplierToLogistics3PL",
+        component: SupplierToLogistics3PL
+    },
 ]
 
 const router = createRouter({
