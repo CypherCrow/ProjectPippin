@@ -10,7 +10,8 @@
             <p>{{ description }}</p>
         </div>
 
-        <div class="RateAndVote">
+        <div class="Rate">
+            <p>&#11088;&#11088;&#11088;&#11088;&#11088;</p>
             <!-- <Button buttonName="Vote for Removal" color="red"/> --> 
         </div>
     </div>
