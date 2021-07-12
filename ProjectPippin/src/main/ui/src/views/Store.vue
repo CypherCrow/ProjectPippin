@@ -9,7 +9,7 @@
             <Button @click="redirectToProductCreationPage()" buttonName="Upload Product"/>
         </div> 
 
-        <div class="PippinStoreProductsSection" v-for="product in products" :key="product.id">
+        <div class="PippinStoreProductsSection" v-for="product in $store.state.products" :key="product.id">
             <ProductCard :name="product.name" :price="product.price" :description="product.description" /> 
         </div> 
         <!-- <SimpleForm /> -->
@@ -40,9 +40,6 @@ export default {
         }
     },
     methods: {
-        addProduct(newProduct){
-            this.products = [...this.products, newProduct]
-        },
         redirectToProductCreationPage(){
             this.$router.push('/store/newProduct')
 
@@ -50,7 +47,6 @@ export default {
             //console.log('Spongebob SquarePants - Complete 3rd Season DVD CollectionSq'.length)
         }
     }, 
-    emits: ['add-product']
 } 
 
 </script> 

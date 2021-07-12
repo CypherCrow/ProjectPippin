@@ -49,6 +49,7 @@ export default {
     }, 
     data(){
         return {
+            contract: 'ManufacturerToSupplierContract',
             sender: '', 
             receiver: '',
             orderId: '',
@@ -61,6 +62,7 @@ export default {
             e.preventDefault();
 
             const newTransaction = {
+                contract: this.contract,
                 sender: this.sender,
                 receiver: this.receiver,
                 orderId: this.orderId,
