@@ -51,13 +51,14 @@ export default {
         ]
     },
     methods: {
-        addProduct(id, name, price, description){
-            this.products.push({id, name, price, description}); 
+        addProduct(newProduct){
+            this.products = [...this.products, newProduct]
         },
         redirectToProductCreationPage(){
             this.$router.push('/store/newProduct')
         }
-    }
+    }, 
+    emits: ['add-product']
 } 
 
 </script> 

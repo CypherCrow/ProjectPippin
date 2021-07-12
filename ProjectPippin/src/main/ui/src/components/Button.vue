@@ -10,10 +10,6 @@ export default {
         buttonName: String,
         color: String
     }, 
-    methods: {
-
-    },
-
 }
 
 </script>

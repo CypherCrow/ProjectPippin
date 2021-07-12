@@ -3,11 +3,17 @@
     <!-- NO DUPLICATES ALLOWED --->
 
     <div class="ProductCreation">
-        <Header title="New Product" />
+        <Header />
+
+        <div class="PageHeader">
+            <PageHeader title="Upload New Product" /> 
+        </div> 
+
         <!-- Must need image upload ---> 
         <!-- Products can be promoted or demoted; two types of votes: up and down; first 100 buyers is the minimum for product to be considered
             for promotion; those that voted down will have their GAS refunded -->
-        <form @submit="onSubmit"> 
+        
+        <form @submit="formSubmit"> 
             <div class="productName"> <!-- Have input listeners on here -->
                 <label>Name</label><br/>
                 <input v-model="productName" name="productName" @keyup:enter="titleCharsCheck" />
@@ -42,19 +48,17 @@
 </template> 
 
 <script>
-
-import router from '@/router/index'
 //import { api } from '@cityofzion/neon-js'
 
 import Header from '@/components/Header.vue'
-//import Button from '@/components/Button'
+import PageHeader from '@/components/PageHeader'
 
 const DESCRIPTION_CHARS_MAX_COUNT = 125, TITLE_CHARS_MAX_COUNT = 75;
 
 export default {
     name: 'ProductCreation',
     components: {
-        Header, //Button
+        Header, PageHeader //Button
     },
     data() {
         return {
@@ -89,9 +93,11 @@ export default {
             const newProduct = {
                 id: Math.floor(Math.random() * 9999),
                 name: this.productName,
-                price: this.productPrice,
+                price: this.productPrice.toFixed(2),
                 description: this.productDescription
             }
+
+            console.log(newProduct)
 
             this.$emit('add-product', newProduct)
 
@@ -99,7 +105,7 @@ export default {
             this.productPrice = 0.00
             this.productDescription = ''
 
-            let count = 3            
+            /* let count = 3            
 
             setInterval(() => {
                 this.output = `Submitted! Will be redirected to store page in ${count}...`
@@ -110,8 +116,9 @@ export default {
 
                 count--
 
-            }, 1000)
+            }, 1000) */
             
+            this.$router.push({path: '/store'})
         },
 
         descriptionCharsCheck(){
@@ -139,6 +146,14 @@ export default {
 <style scoped>
 .ProductCreation {
     flex-direction: column; 
+}
+
+.PageHeader {
+    text-align: center; 
+}
+
+form {
+    margin-left: 140px; 
 }
 
 form div {

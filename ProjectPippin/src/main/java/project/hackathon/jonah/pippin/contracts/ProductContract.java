@@ -50,7 +50,7 @@ public class ProductContract {
      * @return
      */
     public static boolean createProduct(String productId, String title, String price, String description /*, ByteString imageHash */){
-        if(productId == null || title ==  null || description == null /*|| imageHash == null */){
+        if(productId == null || title ==  null || price == null || description == null /*|| imageHash == null */){
             return false; 
         }
         if(Runtime.getCallingScriptHash() != getOwner()){

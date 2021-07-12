@@ -1,0 +1,12 @@
+[
+  {
+    "contract": "ProductContract",
+    "operation": "createProduct",
+    "args": [
+      5,
+      "The Fellowship of the Ring",
+      13.95,
+      "The first book of the Lord of the Rings trilogy."
+    ]
+  }
+]
