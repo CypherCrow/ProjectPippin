@@ -22,9 +22,14 @@
                     <input v-model="orderId" name="orderId" /> 
                 </div>
 
-                <div class="ShipmentDatesSection">
-                    <label>Shipment Dates:</label>
+                <div class="ShipmentDateSection">
+                    <label>Shipment Date:</label>
                     <input v-model="shipmentDate" name="shipmentDates" placeholder="Enter in this format: mm/dd/yyyy" />
+                </div>
+
+                <div class="CurrentDateSection">
+                    <label>Current Date:</label>
+                    <input v-model="currentDate" name="currentDate" placeholder="Enter in this format: mm/dd/yyyy" />
                 </div>
 
                 <input type="submit" value="Sign" class="PippinButton" />
@@ -47,7 +52,8 @@ export default {
             sender: '', 
             receiver: '',
             orderId: '',
-            shipmentDate: ''
+            shipmentDate: '', 
+            currentDate: ''
         };
     },
     methods: {
@@ -58,10 +64,17 @@ export default {
                 sender: this.sender,
                 receiver: this.receiver,
                 orderId: this.orderId,
-                shipmentDate: this.shipmentDate
+                shipmentDate: this.shipmentDate,
+                currentDate: this.currentDate
             }
 
             this.$store.commit('addTransaction', newTransaction)
+
+            this.sender = ''
+            this.receiver = ''
+            this.orderId = ''
+            this.shipmentDate = ''
+            this.currentDate = ''
         }
     }
 }
