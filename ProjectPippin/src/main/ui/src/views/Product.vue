@@ -7,7 +7,7 @@
         </div> 
 
         <div class="ProductOptions">
-            <Button buttonTitle="Add to Cart" />
+            <Button buttonName="Add to Cart" />
         </div> 
     </div> 
 </template> 

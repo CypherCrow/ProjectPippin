@@ -12,7 +12,7 @@
                 Smart contracts automate the forms needed to deliver a package, and from this, paperwork is reduced. 
                 All it needs is typed input.
                 <br/><br/> 
-                All purchases are paid with NEO and GAS.
+                All purchases are paid with GAS.
             </p>
         </div>
     </div>

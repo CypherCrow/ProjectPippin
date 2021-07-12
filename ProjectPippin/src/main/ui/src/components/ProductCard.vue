@@ -3,7 +3,7 @@
         <!--- <p id="image"><img alt="Default image provided" width="300px" height="300px" v-bind:src="image" /></p> -->
         <div class="NameAndPrice">
             <p id="name"><router-link to="/product/0001">{{ name }}</router-link></p>
-            <p id="price">${{ price }}</p>
+            <p id="price">{{ price }} GAS</p>
         </div>
 
         <div class="Description">

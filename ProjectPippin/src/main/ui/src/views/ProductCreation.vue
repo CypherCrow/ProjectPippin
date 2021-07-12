@@ -107,9 +107,7 @@ export default {
                 description: this.productDescription
             }
 
-            console.log(newProduct)
-
-            this.$emit('add-product', newProduct)
+            this.$store.commit('addProduct', newProduct)
 
             this.productName = ''
             this.productPrice = 0.00
