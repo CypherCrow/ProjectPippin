@@ -12,9 +12,10 @@
             <h3>{{ contract }}</h3><p id="Date"> - {{ date }}</p>
         </div> 
 
-        <div class="SenderReceiverSection">
+        <div class="SenderReceiverOrderSection">
             <p id="Sender"><b>Sender:</b> {{ sender }}</p> 
             <p id="Receiver"><b>Receiver:</b> {{ receiver }}</p> 
+            <p id="OrderId"><b>Order ID:</b> {{ orderId }}</p>
         </div>
     </div> 
 </template>
@@ -26,7 +27,8 @@ export default {
     props: {
         contract: String,
         sender: String, 
-        reciever: String, 
+        receiver: String, 
+        orderId: String,
         date: String,
         //shipmentDates: String 
     }
@@ -43,8 +45,8 @@ export default {
     align-content: center;
     border-radius: 15px;
     word-wrap: break-word;  
-    width: 700px; 
-    max-width: 1000px;
+    width: 600px; 
+    max-width: 600px;
     max-height: 200px; 
 }
 
@@ -63,10 +65,12 @@ export default {
 
 .CardHeaderSection {
     display: inline; 
+    text-align: center;
 }
 
-.SenderReceiverSection {
+.SenderReceiverOrderSection {
     display: inline; 
+    text-align: center; 
 }
 
 </style>

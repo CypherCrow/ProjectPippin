@@ -10,6 +10,7 @@
                 :contract="transaction.contract" 
                 :sender="transaction.sender"
                 :receiver="transaction.receiver"
+                :orderId="transaction.orderId"
                 :date="transaction.date" />
         </div>
 
@@ -34,9 +35,10 @@ export default {
         this.contractTransactions = [
             {
                 id: 1,
-                contract: 'AccountCountract',
+                contract: 'OrderContract',
                 sender: 'Pippin Project',
                 receiver: 'You', 
+                orderId: '372182',
                 date: '7/11/2021'
             }
         ]

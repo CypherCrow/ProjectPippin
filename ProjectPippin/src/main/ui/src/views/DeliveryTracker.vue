@@ -38,14 +38,13 @@ export default {
 
 .DeliveryTracker {
     display: inline-block;
-    justify-content: space-around;
 }
 
 .TrackerMap {
     float: left; 
     border: 1px solid black; 
     border-radius: 5px; 
-    margin-left: 40%;
+    margin-left: 20%;
     margin-right: 5px; 
 }
 

@@ -81,4 +81,18 @@ export default {
     float: right; 
 }
 
+form {
+    margin-left: 140px; 
+}
+
+form div {
+    margin: 20px 20px; 
+}
+
+form div input {
+    min-width: 100px;
+    margin-left: 20px; 
+    margin-top: 10px; 
+}
+
 </style>
